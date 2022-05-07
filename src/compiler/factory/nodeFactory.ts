@@ -468,6 +468,7 @@ namespace ts {
             get createStrictEquality() { return getBinaryCreateFunction(SyntaxKind.EqualsEqualsEqualsToken); },
             get createStrictInequality() { return getBinaryCreateFunction(SyntaxKind.ExclamationEqualsEqualsToken); },
             get createEquality() { return getBinaryCreateFunction(SyntaxKind.EqualsEqualsToken); },
+            get createAlmostEqualEquality() { return getBinaryCreateFunction(SyntaxKind.AlmostEqualsToken); },
             get createInequality() { return getBinaryCreateFunction(SyntaxKind.ExclamationEqualsToken); },
             get createLessThan() { return getBinaryCreateFunction(SyntaxKind.LessThanToken); },
             get createLessThanEquals() { return getBinaryCreateFunction(SyntaxKind.LessThanEqualsToken); },

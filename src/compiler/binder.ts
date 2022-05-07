@@ -928,6 +928,7 @@ namespace ts {
                 case SyntaxKind.QuestionQuestionEqualsToken:
                     return containsNarrowableReference(expr.left);
                 case SyntaxKind.EqualsEqualsToken:
+                case SyntaxKind.AlmostEqualsToken:
                 case SyntaxKind.ExclamationEqualsToken:
                 case SyntaxKind.EqualsEqualsEqualsToken:
                 case SyntaxKind.ExclamationEqualsEqualsToken:
