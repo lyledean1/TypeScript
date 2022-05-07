@@ -3853,6 +3853,7 @@ namespace ts {
             case SyntaxKind.AmpersandToken:
                 return OperatorPrecedence.BitwiseAND;
             case SyntaxKind.EqualsEqualsToken:
+            case SyntaxKind.AlmostEqualsToken:
             case SyntaxKind.ExclamationEqualsToken:
             case SyntaxKind.EqualsEqualsEqualsToken:
             case SyntaxKind.ExclamationEqualsEqualsToken:

@@ -23623,6 +23623,7 @@ namespace ts {
                 case SyntaxKind.BinaryExpression:
                     switch ((node as BinaryExpression).operatorToken.kind) {
                         case SyntaxKind.EqualsToken:
+                        case SyntaxKind.AlmostEqualsToken:
                         case SyntaxKind.BarBarEqualsToken:
                         case SyntaxKind.AmpersandAmpersandEqualsToken:
                         case SyntaxKind.QuestionQuestionEqualsToken:
@@ -24766,6 +24767,7 @@ namespace ts {
                     case SyntaxKind.QuestionQuestionEqualsToken:
                         return narrowTypeByTruthiness(narrowType(type, expr.right, assumeTrue), expr.left, assumeTrue);
                     case SyntaxKind.EqualsEqualsToken:
+                    case SyntaxKind.AlmostEqualsToken:
                     case SyntaxKind.ExclamationEqualsToken:
                     case SyntaxKind.EqualsEqualsEqualsToken:
                     case SyntaxKind.ExclamationEqualsEqualsToken:
@@ -24904,7 +24906,7 @@ namespace ts {
                     if (!strictNullChecks) {
                         return type;
                     }
-                    const doubleEquals = operator === SyntaxKind.EqualsEqualsToken || operator === SyntaxKind.ExclamationEqualsToken;
+                    const doubleEquals = operator === SyntaxKind.EqualsEqualsToken || operator === SyntaxKind.ExclamationEqualsToken || operator === SyntaxKind.AlmostEqualsToken;
                     const facts = doubleEquals ?
                         assumeTrue ? TypeFacts.EQUndefinedOrNull : TypeFacts.NEUndefinedOrNull :
                         valueType.flags & TypeFlags.Null ?
@@ -33932,6 +33934,7 @@ namespace ts {
                     }
                     return booleanType;
                 case SyntaxKind.EqualsEqualsToken:
+                case SyntaxKind.AlmostEqualsToken:
                 case SyntaxKind.ExclamationEqualsToken:
                 case SyntaxKind.EqualsEqualsEqualsToken:
                 case SyntaxKind.ExclamationEqualsEqualsToken:

@@ -960,6 +960,7 @@ namespace ts {
 
     function isEqualityOperator(kind: SyntaxKind): kind is EqualityOperator {
         return kind === SyntaxKind.EqualsEqualsToken
+            || kind === SyntaxKind.AlmostEqualsToken
             || kind === SyntaxKind.EqualsEqualsEqualsToken
             || kind === SyntaxKind.ExclamationEqualsToken
             || kind === SyntaxKind.ExclamationEqualsEqualsToken;

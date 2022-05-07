@@ -60,6 +60,7 @@ namespace ts {
         LessThanEqualsToken,
         GreaterThanEqualsToken,
         EqualsEqualsToken,
+        AlmostEqualsToken,
         ExclamationEqualsToken,
         EqualsEqualsEqualsToken,
         ExclamationEqualsEqualsToken,
@@ -503,6 +504,7 @@ namespace ts {
         | SyntaxKind.LessThanEqualsToken
         | SyntaxKind.GreaterThanEqualsToken
         | SyntaxKind.EqualsEqualsToken
+        | SyntaxKind.AlmostEqualsToken
         | SyntaxKind.ExclamationEqualsToken
         | SyntaxKind.EqualsEqualsEqualsToken
         | SyntaxKind.ExclamationEqualsEqualsToken
@@ -1956,6 +1958,7 @@ namespace ts {
     // see: https://tc39.github.io/ecma262/#prod-EqualityExpression
     export type EqualityOperator =
         | SyntaxKind.EqualsEqualsToken
+        | SyntaxKind.AlmostEqualsToken
         | SyntaxKind.EqualsEqualsEqualsToken
         | SyntaxKind.ExclamationEqualsEqualsToken
         | SyntaxKind.ExclamationEqualsToken
@@ -7770,6 +7773,7 @@ namespace ts {
         createStrictEquality(left: Expression, right: Expression): BinaryExpression;
         createStrictInequality(left: Expression, right: Expression): BinaryExpression;
         createEquality(left: Expression, right: Expression): BinaryExpression;
+        createAlmostEqualEquality(left: Expression, right: Expression): BinaryExpression;
         createInequality(left: Expression, right: Expression): BinaryExpression;
         createLessThan(left: Expression, right: Expression): BinaryExpression;
         createLessThanEquals(left: Expression, right: Expression): BinaryExpression;

@@ -180,6 +180,7 @@ namespace ts {
         "<=": SyntaxKind.LessThanEqualsToken,
         ">=": SyntaxKind.GreaterThanEqualsToken,
         "==": SyntaxKind.EqualsEqualsToken,
+        "~=": SyntaxKind.AlmostEqualsToken,
         "!=": SyntaxKind.ExclamationEqualsToken,
         "===": SyntaxKind.EqualsEqualsEqualsToken,
         "!==": SyntaxKind.ExclamationEqualsEqualsToken,
@@ -2018,6 +2019,9 @@ namespace ts {
                         pos++;
                         return token = SyntaxKind.CloseBraceToken;
                     case CharacterCodes.tilde:
+                        if (text.charCodeAt(pos + 1) === CharacterCodes.equals) {
+                            return pos += 2, token = SyntaxKind.AlmostEqualsToken;
+                        }
                         pos++;
                         return token = SyntaxKind.TildeToken;
                     case CharacterCodes.at:
